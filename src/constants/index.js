@@ -52,7 +52,7 @@ export const clientReviews = [
 
 export const myProjects = [
     {
-        title: 'Tweetie – Social Media Platform',
+        title: 'Tweetie - Social Media Platform',
         desc: 'A full-stack social media platform with secure JWT authentication and real-time interaction features.',
         subdesc: 'Built with React, MongoDB, Express.js, Node.js, JWT, Cloudinary, and React Query. Integrated real-time notifications, post management, likes, comments, and a follow system. Achieved 99% uptime during testing and supported 100+ concurrent users.',
         href: 'https://github.com/Aryangupta-05/Tweetie', 
