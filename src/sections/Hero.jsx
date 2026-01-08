@@ -6,6 +6,7 @@ import {PerspectiveCamera} from "@react-three/drei";
 import {useMediaQuery} from "react-responsive";
 import {calculateSizes} from "../constants/index.js";
 import Target from "../components/Target.jsx";
+import ModelErrorBoundary from "../components/ModelErrorBoundary.jsx";
 import ReactLogo from "../components/ReactLogo.jsx";
 import Cube from "../components/Cube.jsx";
 import Rings from "../components/Rings.jsx";
@@ -42,7 +43,9 @@ const Hero = () => {
                             />
                         </HeroCamera>
                             <group>
-                                <Target position={sizes.targetPosition}/>
+                                <ModelErrorBoundary fallbackPosition={sizes.targetPosition}>
+                                    <Target position={sizes.targetPosition}/>
+                                </ModelErrorBoundary>
                                 <ReactLogo position={sizes.reactLogoPosition}/>
                                 <Cube position={sizes.cubePosition}/>
                                 <Rings position={sizes.ringPosition}/>
