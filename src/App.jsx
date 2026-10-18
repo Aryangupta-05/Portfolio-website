@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from "react";
+import { flushSync } from "react-dom";
 import { profile, projects, contributions, skills } from "./data/portfolio.js";
 import Icon from "./components/Icon.jsx";
 import SystemSketch from "./components/SystemSketch.jsx";
@@ -199,10 +200,75 @@ function ProjectIndex() {
 }
 
 export default function App() {
+  const [theme, setTheme] = useState("light");
   const [menuOpen, setMenuOpen] = useState(false);
   const [active, setActive] = useState("home");
   const [copyState, setCopyState] = useState("");
   const copyTimer = useRef();
+  const themeTransition = useRef(null);
+  useEffect(() => {
+    // The head script sets this before paint; state catches up after hydration.
+    setTheme(document.documentElement.dataset.theme || "light");
+  }, []);
+
+  async function toggleTheme(event) {
+    // Start at the button's center for mouse, touch, and keyboard activation.
+    const bounds = event.currentTarget.getBoundingClientRect();
+    const x = bounds.left + bounds.width / 2;
+    const y = bounds.top + bounds.height / 2;
+    const radius = Math.hypot(
+      Math.max(x, window.innerWidth - x),
+      Math.max(y, window.innerHeight - y),
+    );
+    const next =
+      document.documentElement.dataset.theme === "dark" ? "light" : "dark";
+    const applyTheme = () => {
+      flushSync(() => setTheme(next));
+      document.documentElement.dataset.theme = next;
+      document
+        .querySelector('meta[name="theme-color"]')
+        ?.setAttribute("content", next === "dark" ? "#111311" : "#faf9f6");
+      try {
+        localStorage.setItem("aryan-portfolio-theme", next);
+      } catch {
+        /* Theme still works when storage is unavailable. */
+      }
+    };
+
+    // A second click interrupts the previous reveal instead of queuing it.
+    themeTransition.current?.skipTransition();
+    if (
+      !document.startViewTransition ||
+      window.matchMedia("(prefers-reduced-motion: reduce)").matches
+    ) {
+      applyTheme();
+      return;
+    }
+
+    const transition = document.startViewTransition(applyTheme);
+    themeTransition.current = transition;
+    try {
+      await transition.ready;
+      await document.documentElement.animate(
+        {
+          clipPath: [
+            `circle(0px at ${x}px ${y}px)`,
+            `circle(${radius}px at ${x}px ${y}px)`,
+          ],
+        },
+        {
+          duration: 650,
+          easing: "cubic-bezier(0.22, 1, 0.36, 1)",
+          pseudoElement: "::view-transition-new(root)",
+        },
+      ).finished;
+    } catch {
+      // Interrupted or unsupported animations still leave the selected theme applied.
+    } finally {
+      if (themeTransition.current === transition)
+        themeTransition.current = null;
+    }
+  }
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) =>
@@ -274,6 +340,23 @@ export default function App() {
             </a>
           </nav>
           <div className="header-actions">
+            <button
+              className="theme-toggle"
+              onClick={toggleTheme}
+              aria-label={
+                theme === "light"
+                  ? "Switch to dark theme"
+                  : "Switch to light theme"
+              }
+              aria-pressed={theme === "dark"}
+              title={
+                theme === "light"
+                  ? "Switch to dark theme"
+                  : "Switch to light theme"
+              }
+            >
+              <Icon name={theme === "light" ? "moon" : "sun"} />
+            </button>
             <button
               className="menu-toggle"
               aria-label={menuOpen ? "Close navigation" : "Open navigation"}

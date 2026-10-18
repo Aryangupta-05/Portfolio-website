@@ -5,6 +5,26 @@
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="theme-color" content="#faf9f6" />
+    <script>
+      (() => {
+        let saved;
+        try {
+          saved = localStorage.getItem("aryan-portfolio-theme");
+        } catch {
+          /* Optional storage. */
+        }
+        const theme =
+          saved === "light" || saved === "dark"
+            ? saved
+            : window.matchMedia("(prefers-color-scheme: dark)").matches
+              ? "dark"
+              : "light";
+        document.documentElement.dataset.theme = theme;
+        document
+          .querySelector('meta[name="theme-color"]')
+          .setAttribute("content", theme === "dark" ? "#111311" : "#faf9f6");
+      })();
+    </script>
     <title>Aryan Gupta — AI/ML &amp; Backend Portfolio</title>
   </head>
   <body>

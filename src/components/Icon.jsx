@@ -6,6 +6,13 @@ export default function Icon({ name, className = "" }) {
         <path d="m3 7 9 6 9-6" />
       </>
     ),
+    moon: <path d="M20.7 13.1A9 9 0 0 1 10.9 3.3a9 9 0 1 0 9.8 9.8Z" />,
+    sun: (
+      <>
+        <circle cx="12" cy="12" r="4" />
+        <path d="M12 2v2m0 16v2M2 12h2m16 0h2M4.9 4.9l1.4 1.4m11.4 11.4 1.4 1.4m0-14.2-1.4 1.4M6.3 17.7l-1.4 1.4" />
+      </>
+    ),
     arrowUp: <path d="M6 18 18 6M6 6h12v12" />,
     arrowDown: <path d="M12 4v16m-6-6 6 6 6-6" />,
     arrowRight: <path d="M4 12h16m-6-6 6 6-6 6" />,
