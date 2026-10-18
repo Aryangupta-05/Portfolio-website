@@ -1,0 +1,40 @@
+<!-- EmailJS main template (use the Code Editor).
+To Email: aryangupta050903@gmail.com (fixed in the dashboard, not a variable)
+From Name: Portfolio query
+Reply-To: {{from_email}}
+Subject: [Portfolio query] {{subject}} — {{reference}}
+reCAPTCHA is not enabled, as requested by the owner.
+Link acknowledgement.html from this template's Auto-Reply tab.
+-->
+<div
+  style="
+    font-family: Arial, sans-serif;
+    color: #202925;
+    max-width: 620px;
+    margin: auto;
+    padding: 28px;
+    background: #faf9f6;
+  "
+>
+  <p style="font-size: 11px; letter-spacing: 2px; color: #627454">
+    ARYAN GUPTA / PORTFOLIO QUERY
+  </p>
+  <h1 style="font-size: 24px; line-height: 1.4">{{subject}}</h1>
+  <p><strong>From:</strong> {{from_name}} &lt;{{from_email}}&gt;</p>
+  <p><strong>Reference:</strong> {{reference}}</p>
+  <p><strong>Submitted:</strong> {{submitted_at}} (UTC)</p>
+  <div
+    style="
+      padding: 20px;
+      border: 1px solid #d9dfd1;
+      background: #fffefa;
+      white-space: pre-wrap;
+      overflow-wrap: anywhere;
+    "
+  >
+    {{message}}
+  </div>
+  <p style="line-height: 1.8">
+    Reply to this email to continue the conversation with the sender.
+  </p>
+</div>

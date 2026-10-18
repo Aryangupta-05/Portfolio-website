@@ -3,6 +3,7 @@ import { flushSync } from "react-dom";
 import { profile, projects, contributions, skills } from "./data/portfolio.js";
 import Icon from "./components/Icon.jsx";
 import SystemSketch from "./components/SystemSketch.jsx";
+import QueryForm from "./components/QueryForm.jsx";
 
 const external = { target: "_blank", rel: "noopener noreferrer" };
 const featuredProjects = ["documind", "dpi", "tweetie", "rice"].map((id) =>
@@ -706,6 +707,9 @@ export default function App() {
               >
                 Start a conversation <Icon name="arrowUp" />
               </a>
+              <a className="text-link query-jump" href="#query">
+                Or leave a query below <Icon name="arrowDown" />
+              </a>
             </div>
             <div className="contact-card">
               <span className="contact-card-label">SAY HELLO</span>
@@ -735,6 +739,7 @@ export default function App() {
               </div>
             </div>
           </div>
+          <QueryForm />
         </section>
       </main>
       <footer className="container site-footer">
