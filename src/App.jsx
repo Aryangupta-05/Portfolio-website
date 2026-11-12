@@ -462,7 +462,7 @@ export default function App() {
               <Icon name="terminal" />
             </span>
             <p>
-              <strong>750+ problems solved</strong>
+              <strong>1000+ problems solved</strong>
               <span>DSA & competitive programming</span>
             </p>
           </div>
