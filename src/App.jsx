@@ -321,8 +321,8 @@ export default function App() {
             aria-label="Main navigation"
           >
             {[
-              ["work", "Work"],
               ["opensource", "Open source"],
+              ["work", "Projects"],
               ["about", "About"],
             ].map(([id, name]) => (
               <a
@@ -386,13 +386,20 @@ export default function App() {
               Solid <em>engineering.</em>
             </h1>
             <p className="hero-description">
-              I build AI applications and the backends behind them. From
-              document retrieval to reliable APIs, I like turning complex
-              problems into systems people can use.
+              I build AI applications and reliable backends, and contribute
+              tested fixes to open-source libraries used by other developers.
             </p>
+            <a className="hero-oss" href="#opensource">
+              <Icon name="gitMerge" />
+              <span>
+                <strong>{contributionStats.merged} open-source fixes merged upstream</strong>
+                <span>node-cron · kin-openapi · gocron · w3lib · go-billy</span>
+              </span>
+              <Icon name="arrowUp" />
+            </a>
             <div className="hero-actions">
-              <a className="button button-dark" href="#work">
-                Explore my work <Icon name="arrowDown" />
+              <a className="button button-dark" href="#opensource">
+                See my contributions <Icon name="arrowDown" />
               </a>
               <a
                 className="button button-outline"
@@ -478,9 +485,10 @@ export default function App() {
             </p>
           </div>
         </div>
+        <OpenSource />
         <section className="section container" id="work">
           <SectionTitle
-            number="01"
+            number="02"
             eyebrow="SELECTED WORK"
             title={
               <>
@@ -502,7 +510,6 @@ export default function App() {
           </div>
           <ProjectIndex />
         </section>
-        <OpenSource />
         <section className="section container" id="about">
           <SectionTitle
             number="03"

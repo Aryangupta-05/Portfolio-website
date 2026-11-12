@@ -13,7 +13,7 @@ export default function OpenSource() {
       <div className="container">
         <div className="section-heading">
           <div>
-            <p className="eyebrow"><span>02</span> / OPEN SOURCE</p>
+            <p className="eyebrow"><span>01</span> / OPEN SOURCE</p>
             <h2 id="opensource-title">Fixes that made it<br /><em>upstream.</em></h2>
           </div>
           <p className="section-intro">

@@ -37,6 +37,8 @@ The index includes 14 selected public projects, including SwasthIQ Front Desk Ag
 
 The design replaces WebGL models, the globe, autoplay videos, and animation libraries with native illustrations. Contact offers direct email, clipboard copying, and a query form with a linked email acknowledgement. Experience includes QOE and the BIT Mesra project internship.
 
+The hero highlights five merged upstream fixes and links directly to the open-source section, which appears before selected projects. Navigation follows that order. The featured project order is unchanged.
+
 ## Themes
 
 The header sun/moon button switches between light and dark themes. The first visit follows the system preference; explicit selection is saved locally. A small head script applies the saved theme before paint, and React updates the accessible control after hydration. Storage failures do not prevent switching.
