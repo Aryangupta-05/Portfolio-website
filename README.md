@@ -24,11 +24,11 @@ The build compiles assets and prerenders the complete portfolio into `dist/index
 
 - `src/data/portfolio.js`: profile links, projects, and toolkit.
 - `src/data/contributions.js`: dated merged/open PR snapshot, verified merge records, and derived summary counts.
-- `src/components/OpenSource.jsx`: merged-fix highlights and the expandable open-PR list.
+- `src/components/OpenSource.jsx`: merged-fix highlights; open PRs are omitted from the website.
 - `src/App.jsx`: sections, filtering, accessible disclosures, navigation, and contact.
 - `src/components/SystemSketch.jsx`: native architecture/interface illustrations. Interface concepts are labelled; they are not screenshots.
 - `src/index.css`: responsive layouts, focus states, and reduced-motion support.
-- `public/Aryan_Gupta_Resume.pdf`: the existing October resume with the matching public contact address. Replace when the resume changes.
+- `public/Aryan_Gupta_Resume.pdf`: the owner's supplied “Aryan_Gupta Resume II.pdf”, replaced November 13, 2026. All resume links use this stable URL.
 - `index.html`: title, description, canonical URL, social metadata, and structured data.
 - `public/og-image.png`, `robots.txt`, `sitemap.xml`: sharing and search discovery.
 - `scripts/prerender.mjs`: static rendering at build time.
