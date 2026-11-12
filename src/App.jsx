@@ -631,12 +631,14 @@ export default function App() {
                 </span>
               </a>
               <a
-                href="https://codeforces.com/profile/aryangupta_"
+                href="https://codeforces.com/profile/blackSheep9"
                 {...external}
               >
-                <strong>Pupil</strong>
+                <strong>
+                  1657 <span>peak</span>
+                </strong>
                 <span>
-                  Codeforces <Icon name="arrowUp" />
+                  Codeforces · Expert <Icon name="arrowUp" />
                 </span>
               </a>
             </div>

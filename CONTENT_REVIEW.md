@@ -10,6 +10,7 @@ Reviewed October 18–19, 2026 for AI/ML, backend, and full-stack internship app
 - Rice Leaf links to https://github.com/Aryangupta-05/Rice_Leaf_Detection. Its 87.21% test accuracy and 87.20% F1-score come from the owner's supplied description, rather than an independent benchmark. Internship dates were not supplied and are not invented.
 - DPI Engine describes its functionality without a collaboration label.
 - Education, resume, GitHub, LinkedIn, coding profiles, and the confirmed contact address are included.
+- November 13 update: the owner supplied 1000+ solved DSA problems. Codeforces handle corrected to blackSheep9; the official user.info API returned rating/maxRating 1657 and rank/maxRank Expert on November 13, 2026. The portfolio therefore shows Expert rather than the initially requested Specialist label.
 
 ## Dated contribution evidence
 
