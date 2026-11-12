@@ -1,4 +1,4 @@
-// Checked against the October 2026 resume and public GitHub on 2026-10-18.
+// Existing content uses the October resume; public project index refreshed 2026-11-12.
 // Claims include resume-authoritative local work; diagrams are illustrations.
 export const profile = {
   name: "Aryan Gupta",
@@ -101,6 +101,42 @@ export const projects = [
     repo: `${github}Rice_Leaf_Detection`,
   },
   {
+    id: "swasthiq",
+    name: "SwasthIQ Front Desk Agent",
+    subtitle: "A synthetic clinic scheduling and human-handoff simulator.",
+    category: "APPLIED AI / BACKEND",
+    kind: "Synthetic evaluation simulator",
+    filters: ["AI / ML", "Backend", "Frontend"],
+    stack: ["Python", "FastAPI", "React", "SQLite", "Gemini"],
+    icon: "spark",
+    indexDescription: "Validated scheduling tools, deterministic policy, and a React handoff workspace; synthetic data.",
+    repo: `${github}swasthiq-front-desk-agent`,
+  },
+  {
+    id: "acadza",
+    name: "Acadza · Report to Fix",
+    subtitle: "Traceable student-report triage and faculty review.",
+    category: "APPLIED AI / FULL STACK",
+    kind: "Reviewed-mode demo",
+    filters: ["AI / ML", "Backend", "Frontend"],
+    stack: ["Node.js", "PostgreSQL", "SQLite", "Gemini", "Ajv"],
+    icon: "file",
+    indexDescription: "Faculty review, guarded corrections, and transaction audit history; published proposals use reviewed snapshots.",
+    repo: `${github}acadza-report-fix`,
+  },
+  {
+    id: "multimodal-integrity",
+    name: "Multimodal Submission Integrity",
+    subtitle: "Auditable semantic overlap reports across documents and speech.",
+    category: "AI / SEMANTIC RETRIEVAL",
+    kind: "Local CPU CLI",
+    filters: ["AI / ML", "Backend"],
+    stack: ["Python", "MiniLM", "Whisper", "NumPy", "FFmpeg"],
+    icon: "search",
+    indexDescription: "PDF/DOCX extraction, MP4 speech transcription, and source-linked overlap evidence; synthetic evaluation.",
+    repo: `${github}multimodal-submission-integrity`,
+  },
+  {
     id: "moneymapper",
     name: "MoneyMapper.ai",
     subtitle: "Personal finance, with an AI assist.",
@@ -178,49 +214,6 @@ export const projects = [
     icon: "code",
     repo: `${github}Valentines_week`,
     demo: "https://valentines-week-one.vercel.app",
-  },
-];
-export const contributions = [
-  {
-    repo: "scrapy / w3lib",
-    number: 379,
-    state: "Merged",
-    language: "PYTHON",
-    title: "Fix base URL extraction after script end tags.",
-    url: "https://github.com/scrapy/w3lib/pull/379",
-  },
-  {
-    repo: "go-git / go-billy",
-    number: 247,
-    state: "Merged",
-    language: "GO",
-    title: "Reject ReadDir calls on regular files in the in-memory filesystem.",
-    url: "https://github.com/go-git/go-billy/pull/247",
-  },
-  {
-    repo: "kubernetes / minikube",
-    number: 23835,
-    state: "Open",
-    language: "GO",
-    title: "Reuse disk-image helpers and propagate disk creation errors.",
-    url: "https://github.com/kubernetes/minikube/pull/23835",
-  },
-  {
-    repo: "go-co-op / gocron",
-    number: 966,
-    state: "Open",
-    language: "GO",
-    title:
-      "Preserve calendar dates across midnight daylight-saving transitions.",
-    url: "https://github.com/go-co-op/gocron/pull/966",
-  },
-  {
-    repo: "mahmoud / boltons",
-    number: 582,
-    state: "Open",
-    language: "PYTHON",
-    title: "Preserve unread text when SpooledStringIO rolls over.",
-    url: "https://github.com/mahmoud/boltons/pull/582",
   },
 ];
 export const skills = [

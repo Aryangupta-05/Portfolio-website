@@ -1,9 +1,11 @@
 import { useEffect, useRef, useState } from "react";
 import { flushSync } from "react-dom";
-import { profile, projects, contributions, skills } from "./data/portfolio.js";
+import { profile, projects, skills } from "./data/portfolio.js";
+import { contributionStats } from "./data/contributions.js";
 import Icon from "./components/Icon.jsx";
 import SystemSketch from "./components/SystemSketch.jsx";
 import QueryForm from "./components/QueryForm.jsx";
+import OpenSource from "./components/OpenSource.jsx";
 
 const external = { target: "_blank", rel: "noopener noreferrer" };
 const featuredProjects = ["documind", "dpi", "tweetie", "rice"].map((id) =>
@@ -444,8 +446,8 @@ export default function App() {
               <Icon name="gitMerge" />
             </span>
             <p>
-              <strong>Merged upstream</strong>
-              <span>w3lib & go-billy</span>
+              <strong><a href="#opensource">{contributionStats.merged} fixes merged upstream <Icon name="arrowUp" /></a></strong>
+              <span>node-cron · kin-openapi · +3 libraries</span>
             </p>
           </div>
           <div>
@@ -500,59 +502,7 @@ export default function App() {
           </div>
           <ProjectIndex />
         </section>
-        <section id="opensource" className="opensource">
-          <div className="container">
-            <SectionTitle
-              number="02"
-              eyebrow="BEYOND MY OWN REPOS"
-              title={
-                <>
-                  Small fixes.
-                  <br />
-                  <em>Shared impact.</em>
-                </>
-              }
-            >
-              I contribute fixes to tools other developers use—working through
-              edge cases, regression tests, and maintainer feedback.
-            </SectionTitle>
-            <div className="contributions">
-              {contributions.map((item) => (
-                <a
-                  className="contribution"
-                  href={item.url}
-                  {...external}
-                  key={item.url}
-                >
-                  <div className="contribution-top">
-                    <span className={`pr-status ${item.state.toLowerCase()}`}>
-                      <Icon
-                        name={item.state === "Merged" ? "gitMerge" : "gitPull"}
-                      />
-                      {item.state}
-                    </span>
-                    <span>#{item.number}</span>
-                  </div>
-                  <h3>
-                    {item.repo}
-                    <Icon name="arrowUp" />
-                  </h3>
-                  <p>{item.title}</p>
-                  <span className="contribution-language">{item.language}</span>
-                </a>
-              ))}
-            </div>
-            <div className="opensource-footer">
-              <span>Public pull request status checked October 18, 2026.</span>
-              <a
-                href="https://github.com/pulls?q=is%3Apr+author%3AAryangupta-05"
-                {...external}
-              >
-                All contributions <Icon name="arrowUp" />
-              </a>
-            </div>
-          </div>
-        </section>
+        <OpenSource />
         <section className="section container" id="about">
           <SectionTitle
             number="03"

@@ -5,7 +5,7 @@ Reviewed October 18–19, 2026 for AI/ML, backend, and full-stack internship app
 ## Content
 
 - Featured order: DocuMind, DPI Engine, Tweetie, Rice Leaf Disease Detection.
-- Eleven searchable projects, including MoneyMapper.ai, CreditSea, ROAM-AN, and smaller frontend repositories. The GitHub link provides access to the remaining repositories.
+- Fourteen searchable projects after the November 12 public GitHub refresh, including SwasthIQ Front Desk Agent, Acadza Report to Fix, and Multimodal Submission Integrity. The GitHub link provides access to the remaining repositories.
 - Experience includes QOE and the BIT Mesra project internship; WorkerHub was removed at the owner's request.
 - Rice Leaf links to https://github.com/Aryangupta-05/Rice_Leaf_Detection. Its 87.21% test accuracy and 87.20% F1-score come from the owner's supplied description, rather than an independent benchmark. Internship dates were not supplied and are not invented.
 - DPI Engine describes its functionality without a collaboration label.
@@ -13,13 +13,15 @@ Reviewed October 18–19, 2026 for AI/ML, backend, and full-stack internship app
 
 ## Dated contribution evidence
 
-| Pull request | GitHub state checked October 18, 2026 |
+| Pull request | GitHub state checked November 12, 2026 |
 | --- | --- |
 | scrapy/w3lib #379 | Merged; merge timestamp and commit checked |
 | go-git/go-billy #247 | Merged; merge timestamp and commit checked |
-| kubernetes/minikube #23835 | Open |
-| go-co-op/gocron #966 | Open |
-| mahmoud/boltons #582 | Open |
+| node-cron/node-cron #622 | Merged; merge timestamp and commit checked |
+| getkin/kin-openapi #1413 | Merged; merge timestamp and commit checked |
+| go-co-op/gocron #966 | Merged; merge timestamp and commit checked |
+
+Eight other upstream submissions remain open, including Resty, Immer, Prometheus, chi, go-git, YAML, Visdom, and Minikube. Boltons #582 and NetworkX #9007 are closed without merge, so neither is shown as an active or merged contribution. See OPEN_SOURCE_REVIEW.md for the complete dated evidence and scope of the five-fix highlight.
 
 These states are snapshots. Recheck upstream before updating them; approval or closure alone does not establish a merge. Some project descriptions reflect resume-authoritative local work that may not appear on public default branches. No production reliability or recruitment outcomes are claimed.
 

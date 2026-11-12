@@ -22,7 +22,9 @@ The build compiles assets and prerenders the complete portfolio into `dist/index
 
 ## Update the content
 
-- `src/data/portfolio.js`: profile links, projects, toolkit, and dated PR status.
+- `src/data/portfolio.js`: profile links, projects, and toolkit.
+- `src/data/contributions.js`: dated merged/open PR snapshot, verified merge records, and derived summary counts.
+- `src/components/OpenSource.jsx`: merged-fix highlights and the expandable open-PR list.
 - `src/App.jsx`: sections, filtering, accessible disclosures, navigation, and contact.
 - `src/components/SystemSketch.jsx`: native architecture/interface illustrations. Interface concepts are labelled; they are not screenshots.
 - `src/index.css`: responsive layouts, focus states, and reduced-motion support.
@@ -31,7 +33,7 @@ The build compiles assets and prerenders the complete portfolio into `dist/index
 - `public/og-image.png`, `robots.txt`, `sitemap.xml`: sharing and search discovery.
 - `scripts/prerender.mjs`: static rendering at build time.
 
-The index includes all nine public non-profile project repositories plus the Rice Leaf and Packet Analyser repositories. Other forks and learning repositories are accessible through the GitHub link.
+The index includes 14 selected public projects, including SwasthIQ Front Desk Agent, Acadza Report to Fix, and Multimodal Submission Integrity. Featured order remains DocuMind, DPI Engine, Tweetie, and Rice Leaf. Other repositories are accessible through the GitHub link.
 
 The design replaces WebGL models, the globe, autoplay videos, and animation libraries with native illustrations. Contact offers direct email, clipboard copying, and a query form with a linked email acknowledgement. Experience includes QOE and the BIT Mesra project internship.
 
@@ -43,7 +45,7 @@ The header sun/moon button switches between light and dark themes. The first vis
 
 Reviewed October 18, 2026 against public GitHub repositories, upstream PRs, the October resume, and the owner's Rice Leaf description. Rice Leaf's 87.21% test accuracy and 87.20% F1-score are owner-reported, not independently benchmarked here. Internship dates were not supplied and are not invented. Some implementation details describe resume-authoritative local work that may not appear on public default branches.
 
-Contribution state is a dated snapshot. Update it after checking the upstream PR; approval or closure alone does not prove a merge.
+Public project additions and contribution states were refreshed November 12, 2026. Five upstream bug fixes are merged and eight other PRs remain open. `OPEN_SOURCE_REVIEW.md` records all 15 upstream submissions, including two closed without merge, and the merge commits behind the highlights. Contribution state is a dated snapshot. Update it after checking the upstream PR; approval or closure alone does not prove a merge.
 
 ## Vercel deployment
 
