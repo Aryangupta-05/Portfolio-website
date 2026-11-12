@@ -8,6 +8,7 @@ Verified directly against GitHub on November 12, 2026. This is a dated snapshot,
 - The author-wide search returned 16 public PRs with no remaining page. The additional Packet_Analyser maintenance PR is outside the library/tool-fix highlights and their counts.
 - Merged status requires both a merge timestamp and a merge commit. Open PRs are never counted as accepted work. Closed submissions are not displayed as active contributions.
 - Language labels describe the changed production code, rather than GitHub’s repository-wide language estimate.
+- Display updated November 13, 2026: the portfolio shows merged work only. The open-PR counter and in-progress list were removed at the owner's request; the dated records below remain as audit evidence.
 
 ## Verified PR records
 

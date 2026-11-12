@@ -2,7 +2,6 @@ import {
   contributionSnapshot,
   contributionStats,
   mergedContributions,
-  openContributions,
 } from "../data/contributions.js";
 import Icon from "./Icon.jsx";
 
@@ -25,7 +24,6 @@ export default function OpenSource() {
         </div>
         <dl className="oss-stats" aria-label="Verified open-source contribution summary">
           <div><dt>Merged upstream fixes</dt><dd>{contributionStats.merged.toString().padStart(2, "0")}</dd><dd className="oss-stat-note">Across five libraries</dd></div>
-          <div><dt>Open pull requests</dt><dd>{contributionStats.open.toString().padStart(2, "0")}</dd><dd className="oss-stat-note">Submitted; not yet merged</dd></div>
           <div><dt>Languages in merged work</dt><dd>{contributionStats.languages.length.toString().padStart(2, "0")}</dd><dd className="oss-stat-note">{contributionStats.languages.join(" · ")}</dd></div>
         </dl>
         <div className="oss-group-heading">
@@ -51,25 +49,9 @@ export default function OpenSource() {
             </article>
           ))}
         </div>
-        <details className="oss-open">
-          <summary><span><Icon name="gitPull" /> In progress <b>{contributionStats.open}</b></span><span className="oss-open-hint">View open pull requests <Icon name="arrowDown" /></span></summary>
-          <p className="oss-open-note">These changes are submitted upstream and remain open as of {contributionSnapshot.label}.</p>
-          <ul className="oss-open-list">
-            {openContributions.map((item) => (
-              <li key={item.url}>
-                <a href={item.url} {...external}>
-                  <span className="pr-status open">Open</span>
-                  <span className="oss-open-copy"><strong>{item.repo} <small>#{item.number}</small></strong><span>{item.title}</span></span>
-                  <span className="oss-open-language">{item.language}</span>
-                  <Icon name="arrowUp" />
-                </a>
-              </li>
-            ))}
-          </ul>
-        </details>
         <div className="opensource-footer">
           <span>GitHub status verified {contributionSnapshot.label}.</span>
-          <a href={`https://github.com/pulls?q=is%3Apr+author%3A${contributionSnapshot.author}`} {...external}>Full pull request history <Icon name="arrowUp" /></a>
+          <a href={`https://github.com/pulls?q=is%3Apr+is%3Amerged+author%3A${contributionSnapshot.author}`} {...external}>View merged pull requests <Icon name="arrowUp" /></a>
         </div>
       </div>
     </section>
